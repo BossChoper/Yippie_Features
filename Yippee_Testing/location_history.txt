@@ -1,0 +1,38 @@
+Location History
+Saved on: 2025-03-07 16:15:27
+
+Event: Opening
+  Name: Burger Bonanza
+  Location: 123 Food St, San Francisco, CA
+  Date: 2023-05-15
+  Details: New gourmet burger joint opened with vegan options.
+  Past Occupants:
+    - Pizza Palooza (2018-2022)
+      Closed after owner retired.
+    - Taco Terrace (2015-2017)
+      Relocated to downtown.
+
+Event: Closing
+  Name: Pizza Palace
+  Location: 456 Slice Ave, San Francisco, CA
+  Date: 2024-01-10
+  Details: Closed due to lease expiration.
+  Past Occupants:
+    - Burger Barn (2010-2023)
+      Known for cheap eats.
+
+Event: Opening
+  Name: Taco Haven
+  Location: 789 Taco Ln, San Francisco, CA
+  Date: 2024-06-20
+  Details: Street-style tacos now available.
+
+Event: Closing
+  Name: Sushi Spot
+  Location: 321 Fish Rd, San Francisco, CA
+  Date: 2025-02-28
+  Details: Shut down after health inspection issues.
+  Past Occupants:
+    - Fish Fry Hut (2019-2024)
+      Popular seafood shack.
+

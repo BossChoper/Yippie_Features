@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Donut Farm",
+    "rating": 4.0,
+    "price": "$",
+    "address": "3278 Adeline St, Berkeley, CA 94703",
+    "phone": "+15103386319",
+    "url": "https://www.yelp.com/biz/donut-farm-berkeley?adjust_creative=DdfF7bI0EhRz-X0wku993g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DdfF7bI0EhRz-X0wku993g",
+    "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/8Esq3GmW1EOk8bI9Hs7aRw/o.jpg",
+    "is_closed": false,
+    "distance": "9.4 miles",
+    "analysis": {
+      "vegan_score": 3,
+      "donut_score": 6,
+      "vegan_donut_explicit": false,
+      "vegan_donut_mentions": [],
+      "confidence": "medium"
+    }
+  }
+]

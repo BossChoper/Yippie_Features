@@ -1,0 +1,255 @@
+[
+  {
+    "id": "QueFVMcMlT-6aZFv2M47mg",
+    "name": "Bottega",
+    "url": "https://www.yelp.com/biz/bottega-san-francisco-2?adjust_creative=DdfF7bI0EhRz-X0wku993g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DdfF7bI0EhRz-X0wku993g",
+    "categories": [
+      {
+        "alias": "italian",
+        "title": "Italian"
+      },
+      {
+        "alias": "pastashops",
+        "title": "Pasta Shops"
+      },
+      {
+        "alias": "pizza",
+        "title": "Pizza"
+      }
+    ],
+    "details": {
+      "id": "QueFVMcMlT-6aZFv2M47mg",
+      "alias": "bottega-san-francisco-2",
+      "name": "Bottega",
+      "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/IawDcF1QmHSzUQDczHYVuw/o.jpg",
+      "is_claimed": true,
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/bottega-san-francisco-2?adjust_creative=DdfF7bI0EhRz-X0wku993g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=DdfF7bI0EhRz-X0wku993g",
+      "phone": "+14156559048",
+      "display_phone": "(415) 655-9048",
+      "review_count": 1360,
+      "categories": [
+        {
+          "alias": "italian",
+          "title": "Italian"
+        },
+        {
+          "alias": "pastashops",
+          "title": "Pasta Shops"
+        },
+        {
+          "alias": "pizza",
+          "title": "Pizza"
+        }
+      ],
+      "rating": 4.3,
+      "location": {
+        "address1": "1132 Valencia St",
+        "address2": null,
+        "address3": "",
+        "city": "San Francisco",
+        "zip_code": "94158",
+        "country": "US",
+        "state": "CA",
+        "display_address": [
+          "1132 Valencia St",
+          "San Francisco, CA 94158"
+        ],
+        "cross_streets": ""
+      },
+      "coordinates": {
+        "latitude": 37.75472,
+        "longitude": -122.4212
+      },
+      "photos": [],
+      "price": "$$",
+      "hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "2300",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "2300",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "2300",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "2300",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "0000",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "0000",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "2300",
+              "day": 6
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {
+        "menu_url": "https://www.bottegavalencia.com/_files/ugd/936480_46fcdc775c5a44dca45457333c4372a5.pdf",
+        "waitlist_reservation": true
+      },
+      "transactions": [
+        "pickup",
+        "delivery"
+      ],
+      "messaging": {
+        "url": "https://www.yelp.com/raq/QueFVMcMlT-6aZFv2M47mg?adjust_creative=DdfF7bI0EhRz-X0wku993g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=DdfF7bI0EhRz-X0wku993g#popup%3Araq",
+        "use_case_text": "Message the Business"
+      }
+    },
+    "reviews": []
+  },
+  {
+    "id": "msT3LrLB4fhN04HYHuFsew",
+    "name": "Bella Trattoria",
+    "url": "https://www.yelp.com/biz/bella-trattoria-san-francisco?adjust_creative=DdfF7bI0EhRz-X0wku993g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DdfF7bI0EhRz-X0wku993g",
+    "categories": [
+      {
+        "alias": "italian",
+        "title": "Italian"
+      },
+      {
+        "alias": "bars",
+        "title": "Bars"
+      },
+      {
+        "alias": "pastashops",
+        "title": "Pasta Shops"
+      }
+    ],
+    "details": {
+      "id": "msT3LrLB4fhN04HYHuFsew",
+      "alias": "bella-trattoria-san-francisco",
+      "name": "Bella Trattoria",
+      "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/lgLJnnSC5tmdtoH2yMxung/o.jpg",
+      "is_claimed": true,
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/bella-trattoria-san-francisco?adjust_creative=DdfF7bI0EhRz-X0wku993g&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=DdfF7bI0EhRz-X0wku993g",
+      "phone": "+14152210305",
+      "display_phone": "(415) 221-0305",
+      "review_count": 2011,
+      "categories": [
+        {
+          "alias": "italian",
+          "title": "Italian"
+        },
+        {
+          "alias": "bars",
+          "title": "Bars"
+        },
+        {
+          "alias": "pastashops",
+          "title": "Pasta Shops"
+        }
+      ],
+      "rating": 4.3,
+      "location": {
+        "address1": "3854 Geary Blvd",
+        "address2": "",
+        "address3": "",
+        "city": "San Francisco",
+        "zip_code": "94118",
+        "country": "US",
+        "state": "CA",
+        "display_address": [
+          "3854 Geary Blvd",
+          "San Francisco, CA 94118"
+        ],
+        "cross_streets": "4th Ave & 2nd Ave"
+      },
+      "coordinates": {
+        "latitude": 37.78136,
+        "longitude": -122.46092107729817
+      },
+      "photos": [],
+      "price": "$$",
+      "hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1600",
+              "end": "2100",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1600",
+              "end": "2100",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1600",
+              "end": "2300",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "2300",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "2300",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1200",
+              "end": "2300",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1200",
+              "end": "2100",
+              "day": 6
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {
+        "menu_url": "https://osteriabella.com/contact/"
+      },
+      "transactions": [
+        "delivery",
+        "pickup"
+      ]
+    },
+    "reviews": []
+  }
+]

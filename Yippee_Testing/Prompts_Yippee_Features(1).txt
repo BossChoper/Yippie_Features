@@ -1,0 +1,73 @@
+General Setup Prompt (Optional)
+If you want to set the context for all prompts:
+	•	Prompt: "I’m building a 'Food Finder' app based on specific development guidelines. I want to test features as separate mini-programs in [React/Python/both] before combining them. I have Google Places and Yelp API keys, and I’ll provide additional requirements per feature. Help me create standalone programs for each feature below, keeping them simple and explaining what they do, how to run them, and any setup needed. Start with the prompt I give next."
+
+Scrape Features
+1. Scrape Menu Items with Pictures
+	•	React Version: "Create a standalone React mini-program called 'Menu Pictures Program' that simulates scraping menu items with at least 3 pictures per item. Use mock data (e.g., 2-3 restaurants with items like 'Burger' and 'Pizza', each with 3 hardcoded image URLs). Display the items and images in a simple gallery UI. Explain the code, how to run it, and how I’d replace mock data with real scraped data later."
+	•	Python Version: "Write a standalone Python script called 'Menu Pictures Program' that scrapes menu items and at least 3 pictures per item from a public restaurant website (e.g., a chain like McDonald’s or a sample site you suggest). Use requests and BeautifulSoup to fetch data, save image URLs to a list, and print them. Store my Yelp API key in a .env file if needed. Explain the script, how to run it, and any legal/scraping considerations."
+
+2. Scrape Reviews with AI-Generated Assumptions
+	•	React Version: "Build a standalone React mini-program called 'Reviews Program' that displays 3+ mock reviews per menu item (e.g., 'Burger' with reviews like 'So juicy!', 'Too spicy', 'Great price') and includes an AI-generated 'commonly said' assumption feature. Hardcode the reviews and simulate AI assumptions (e.g., 'This item is known to be spicy') in the UI. Explain how to run it and how I’d integrate real review data later."
+	•	Python Version: "Create a standalone Python script called 'Reviews Program' that scrapes 3+ reviews per menu item from Yelp using my API key (stored in .env). Use requests to fetch data and simulate an AI-generated assumption (e.g., if 'spicy' appears often, print 'This item is known to be spicy'). Output the reviews and assumptions to the console. Explain the script, how to run it, and how to expand the AI logic."
+
+3. Scrape Associated Recipes
+	•	React Version: "Develop a standalone React mini-program called 'Recipes Program' that shows at least 3 associated recipes for a menu item (e.g., 'Burger' with mock recipes like 'Classic Beef Burger', 'Spicy BBQ Burger', 'Veggie Burger'). Display them in a list with fake recipe details. Explain the code, how to run it, and how I’d connect it to real scraped recipes."
+	•	Python Version: "Write a standalone Python script called 'Recipes Program' that scrapes at least 3 recipes associated with a menu item (e.g., 'Burger') from a public recipe site (e.g., AllRecipes or suggest one). Use requests and BeautifulSoup to fetch recipe titles and URLs, then print them. Explain how to run it and handle scraping challenges."
+
+4. Scrape Assumed Ingredients List
+	•	React Version: "Create a standalone React mini-program called 'Ingredients Program' that displays an assumed ingredients list for a menu item (e.g., 'Burger' with 'beef, bun, lettuce') and a disclaimer: 'This meal may have different ingredients. Please contact restaurant for further information.' Use mock data and show it in a simple UI. Explain the code, how to run it, and how to adapt it for scraped data."
+	•	Python Version: "Build a standalone Python script called 'Ingredients Program' that scrapes an assumed ingredients list for a menu item (e.g., 'Burger') from a public source (e.g., McDonald’s website or Yelp). Use requests and BeautifulSoup, print the list with a disclaimer: 'This meal may have different ingredients. Please contact restaurant for further information.' Explain the script and how to run it."
+
+Generate Features
+5. Generate Assumed Ingredients Lists
+	•	React Version: "Make a standalone React mini-program called 'Generated Ingredients Program' that generates assumed ingredients lists for a menu item (e.g., 'Burger') based on mock similar recipes (e.g., 3 hardcoded recipes with ingredients). Display the combined list in the UI with a note: 'Based on similar recipes.' Explain how to run it and integrate real recipe data."
+	•	Python Version: "Create a standalone Python script called 'Generated Ingredients Program' that generates an assumed ingredients list for a menu item (e.g., 'Burger') based on 3 similar recipes from a public source (e.g., McDonald’s or scraped data). Use requests to fetch data, combine common ingredients, and print the list with 'Based on similar recipes.' Explain the script and how to run it."
+
+6. Generate Assumed Nutrition Labels
+	•	React Version: "Develop a standalone React mini-program called 'Nutrition Program' that generates an assumed nutrition label for a menu item (e.g., 'Burger' with calories, fat, etc.) based on mock recipe data or public info (e.g., McDonald’s nutrition). Show it in a simple UI with a disclaimer: 'Assumed values, may vary.' Explain the code, how to run it, and how to use real data."
+	•	Python Version: "Write a standalone Python script called 'Nutrition Program' that generates an assumed nutrition label for a menu item (e.g., 'Burger') using scraped recipes or public data (e.g., McDonald’s nutrition via requests). Calculate basic values (calories, fat) from ingredients and print them with 'Assumed values, may vary.' Explain how to run it and improve accuracy."
+
+Show Features
+7. Show Geographical Map of Restaurants
+	•	React Version: "Build a standalone React mini-program called 'Map Restaurants Program' that shows a geographical map with restaurant icons and message bubbles (e.g., 'Vegan Burger here!') using Google Maps and @react-google-maps/api. Use mock data (3 restaurants near San Francisco) with tags ('vegan', 'italian'). Store my Google API key in .env. Explain the code and how to run it."
+	•	Python Version: "Create a standalone Python script called 'Map Restaurants Program' that generates a geographical map with restaurant icons and message bubbles using Folium. Use mock data (3 restaurants near San Francisco) with tags ('vegan', 'italian'). Save it as HTML and explain how to run it and view the map."
+
+8. Show Proximity-Based List of Restaurants
+	•	React Version: "Make a standalone React mini-program called 'Proximity List Program' that displays a proximity-based list of restaurants (e.g., 'Burger Joint - 0.5 mi') using mock data (3 restaurants) and a simulated user location (e.g., San Francisco). Show the list in the UI with tags ('vegan', 'italian'). Explain how to run it and add real location data."
+	•	Python Version: "Write a standalone Python script called 'Proximity List Program' that prints a proximity-based list of restaurants using mock data (3 restaurants near San Francisco) and a static user location. Calculate distances with a simple formula and include tags ('vegan', 'italian'). Explain the script and how to run it."
+
+Create Assumption System for Diet Preferences + User Profiles
+9. Diet Preferences and User Profiles
+	•	React Version: "Develop a standalone React mini-program called 'Diet Profiles Program' that lets users assign a diet tag (e.g., 'vegan') to their profile via a form. Display mock restaurant data (3 restaurants) with vegan tags or warnings (e.g., 'No separate vegan equipment'). Use local state for the profile. Explain the code, how to run it, and how to expand it."
+	•	Python Version: "Create a standalone Python script called 'Diet Profiles Program' that simulates a user profile with a diet preference (e.g., 'vegan') input via console. Use mock restaurant data (3 restaurants) and print filtered results with tags or warnings (e.g., 'No separate vegan equipment'). Explain how to run it and add real data."
+
+Notification System for Restaurants
+10. Notification System
+	•	React Version: "Build a standalone React mini-program called 'Notifications System Program' that uses the browser Notification API to show asynchronous alerts for restaurants. Use mock data (e.g., 'McDonalds: Chicken tenders for $2!' when within 1 mi of a hardcoded location). Track user location with geolocation and explain how to run and test it."
+	•	Python Version: "Write a standalone Python script called 'Notifications System Program' that uses Plyer for desktop notifications. Simulate an asynchronous alert system with mock data (e.g., 'Donut Run DC: High quality vegan donuts in 0.91 mi') based on a static user location and a 1-2 mi threshold. Explain the script and how to run it."
+
+Extra Features
+11. Download Maps of Areas/Cities
+	•	React Version: "Create a standalone React mini-program called 'Download Maps Program' that simulates downloading a map of an area (e.g., San Francisco) by generating a mock map image or link using Google Maps Static API. Store my Google API key in .env and explain how to run it and make it downloadable."
+	•	Python Version: "Develop a standalone Python script called 'Download Maps Program' that uses Folium to create and save a map of an area (e.g., San Francisco) as HTML, simulating a download feature. Explain how to run it and enhance it for real map downloads."
+
+12. Download Trip Plan Kits
+	•	React Version: "Make a standalone React mini-program called 'Trip Plan Program' that generates a downloadable trip plan kit (e.g., restaurants, foods, cuisines) as a JSON or text file. Use mock data (3 restaurants with foods like 'Burger', 'Pizza') and a download button. Explain the code and how to run it."
+	•	Python Version: "Write a standalone Python script called 'Trip Plan Program' that creates a trip plan kit (restaurants, foods, cuisines) with mock data and saves it as a text file. Explain how to run it and adapt it for real data."
+
+13. Download Location History
+	•	React Version: "Develop a standalone React mini-program called 'Location History Program' that displays and downloads a mock location history (e.g., restaurant openings, closings) as a list and text file. Use hardcoded data (e.g., 'Burger Joint opened 2020, closed 2023'). Explain how to run it and connect real history data."
+	•	Python Version: "Create a standalone Python script called 'Location History Program' that prints and saves a mock location history (e.g., restaurant openings, closings) to a text file. Use hardcoded data and explain how to run it and scrape real history."
+
+14. Online Ordering
+	•	React Version: "Build a standalone React mini-program called 'Online Ordering Program' that simulates online ordering from restaurants. Use mock data (e.g., 'Burger - $5' from 'McDonalds') with an 'Order' button linking to a fake checkout or third-party URL (e.g., UberEats). Explain the code, how to run it, and integrate real ordering."
+	•	Python Version: "Write a standalone Python script called 'Online Ordering Program' that simulates online ordering by fetching mock menu items and printing order options. Suggest how to connect it to UberEats/DoorDash APIs with my Yelp API key in .env. Explain how to run it and expand it."
+
+How to Use These Prompts
+	1	Start Fresh: Begin a new conversation with me by saying, "Let’s start fresh—ignore previous context and focus on this prompt," followed by one of these prompts.
+	2	Choose a Language: Specify "React" or "Python" (or another language) in the prompt. I’ve provided both options for flexibility.
+	3	Test and Tweak: Run each program, experiment with it, and ask follow-ups like "How do I add real Yelp data?" or "Can I change the radius to 3 miles?"
+	4	Combine Later: Once you’re happy, use the bonus prompt below to integrate your favorites.
+Bonus Prompt for Combining Features
+	•	Prompt: "I’ve tested separate mini-programs for scraping menu items, generating nutrition labels, showing maps, creating diet profiles, sending notifications, and extra features in [React/Python]. Now, combine them into a single 'Food Finder' app based on my guidelines: scrape 3+ pictures/reviews/recipes per item, generate assumed ingredients/nutrition, show a map or proximity list, create a diet preference system, add notifications, and include extras like trip plans. Use my Google Places and Yelp API keys from .env. Explain how the pieces fit together and how to run it."

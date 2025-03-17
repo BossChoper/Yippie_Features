@@ -1,0 +1,18 @@
+Food Finder Results for 'Burger'
+Generated on: 2025-03-09 09:26:03
+
+1. Maillards Smash Burgers
+  Cuisine: Popuprestaurants
+  Sample Dish: House Special
+  Address: 1994 37th Ave, San Francisco, CA 94116
+
+2. Smish Smash
+  Cuisine: Burgers
+  Sample Dish: Classic Cheeseburger
+  Address: 945 Market St, San Francisco, CA 94103
+
+3. Beep’s Burgers
+  Cuisine: Burgers
+  Sample Dish: Classic Cheeseburger
+  Address: 1051 Ocean Ave, San Francisco, CA 94112
+
