@@ -1,0 +1,120 @@
+// Function to extract Google reviews from the current page
+function scrapeGoogleReviews(maxReviews = 5) {
+  const reviews = [];
+  
+  // Wait for reviews to load (you may need to manually scroll to load more reviews)
+  setTimeout(() => {
+    // Get all review elements
+    const reviewElements = document.querySelectorAll('.jftiEf');
+    
+    // Extract data from each review
+    reviewElements.forEach((review, index) => {
+      if (index >= maxReviews) return;
+      
+      try {
+        const author = review.querySelector('.d4r55')?.textContent.trim() || 'Unknown';
+        const rating = review.querySelector('.Fam1ne')?.getAttribute('aria-label')?.match(/\d+/)?.[0] || '0';
+        const text = review.querySelector('.wiI7pd')?.textContent.trim() || '';
+        const date = review.querySelector('.rsqaWe')?.textContent.trim() || '';
+        
+        reviews.push({
+          author,
+          rating: parseInt(rating),
+          text,
+          date
+        });
+      } catch (error) {
+        console.error('Error parsing review:', error);
+      }
+    });
+    
+    console.log('Scraped Reviews:', reviews);
+    return reviews;
+  }, 3000); // Wait 3 seconds for reviews to load
+}
+
+// Usage:
+// 1. Go to Google Maps and search for your restaurant
+// 2. Open the reviews section
+// 3. Scroll down to load more reviews
+// 4. Open browser console (F12) and paste this code
+// 5. Call the function: scrapeGoogleReviews(10) // Change number to get more/less reviews
+
+// Optional: Copy results to clipboard
+function copyReviewsToClipboard() {
+  const reviews = scrapeGoogleReviews();
+  navigator.clipboard.writeText(JSON.stringify(reviews, null, 2))
+    .then(() => console.log('Reviews copied to clipboard!'))
+    .catch(err => console.error('Failed to copy:', err));
+}
+
+From perplexity for google
+
+Example output:
+
+[
+    {
+        "author": "BX A",
+        "rating": 0,
+        "text": "Absolutely heavenly! Perfectly fried, light and fluffy real donuts that just happen to be Vegan!! So many unique flavors and so many textures to choose from. My go-to gift whenever I pass through DC from now on is a pink box of 4 Donut Run donuts!!",
+        "date": "3 weeks ago"
+    },
+    {
+        "author": "Heather Boswick",
+        "rating": 0,
+        "text": "A cozy & adorable (all vegan!) donut shop in DC with amazing vibes! We had to stop here while in the area after hearing so much hype about this spot. It LIVED up & beyond! They have soooo many flavors & varieties to tickle your artisan …",
+        "date": "3 months ago"
+    },
+    {
+        "author": "Sonya Hu",
+        "rating": 0,
+        "text": "I don't even know where to start...Donut Run, DC's first ever vegan doughnut shop, has been on my bucket list ever since they first opened their doors in Takoma in 2021. I only just managed to finally make the trek up to Takoma …",
+        "date": "2 months ago"
+    },
+    {
+        "author": "Jessica Wilson",
+        "rating": 0,
+        "text": "Hands down the BEST donuts in the DMV. Incredible variety, always taste like a dream, and quick service. You can't tell me otherwise! …",
+        "date": "2 months ago"
+    },
+    {
+        "author": "Eimy Bonilla",
+        "rating": 0,
+        "text": "I came in when they were about to close. The inside isn’t special. Lots of open space with the counter and donuts at the far end. Service was fine, my friend had asked if she could purchase one donut hole because she was watching her sugar …",
+        "date": "5 months ago"
+    },
+    {
+        "author": "yael",
+        "rating": 0,
+        "text": "i heard so many good things about here so i was excited to try it, but i was underwhelmed… my friend and i shared 3 donuts to taste. the pros: the dough was not too sweet (icing/topping was very sweet — so there was a balance going between …",
+        "date": "2 months ago"
+    },
+    {
+        "author": "Rachel",
+        "rating": 0,
+        "text": "Picked up a selection of donuts on Wednesday morning to celebrate my birthday! Selection was great, short line (was a weekday) and a fair price for specialty donuts! All were fantastic, not greasy, and I’m amazed that they’re vegan!",
+        "date": "2 months ago"
+    },
+    {
+        "author": "Christina Perez",
+        "rating": 0,
+        "text": "The BEST Vegan Donuts IN THE DMV!\n\nI love their Apple Fritter, Classic Glazed, Vanilla Frosted w/ Sprinkles, Death …",
+        "date": "8 months ago"
+    },
+    {
+        "author": "Althea Rose",
+        "rating": 0,
+        "text": "We waited in a little bit of a line, but everyone in line was kind and patient! It moved pretty quickly and it was really nice to not be crowded once we got inside since only 6 people are allowed in at once. Awesome that the donuts are …",
+        "date": "5 months ago"
+    },
+    {
+        "author": "AE Simpson",
+        "rating": 0,
+        "text": "I absolutely loved the blueberry lemon donut. They don't skimp on the jelly in the raspberry jelly filled donuts. The apple fritter is one of the best I've had in a long time with actual apples in it. I can't wait to go back and try other flavors!",
+        "date": "6 days ago"
+    }
+]
+
+Call: scrapeGoogleReviews(10)
+
+Load more reviews and expand number of reviews searched for more reviews
