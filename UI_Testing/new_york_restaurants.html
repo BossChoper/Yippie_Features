@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a26176df9b3505578b40fb5433cd1df7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a26176df9b3505578b40fb5433cd1df7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a26176df9b3505578b40fb5433cd1df7 = L.map(
+                "map_a26176df9b3505578b40fb5433cd1df7",
+                {
+                    center: [40.7128, -74.006],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1c38ad2674f7097009c8a038140cb9e8 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1c38ad2674f7097009c8a038140cb9e8.addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var marker_81422778569b879e2160c24b433608e7 = L.marker(
+                [40.704162059390974, -73.97261092669109],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_f59e7ee6b1eb40d013ae8c21c600e240 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a26b171f6db9634b8fa8d59a61c7cde7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_500b5c2bcc68735113fcc88ea3ee70a8 = $(`<div id="html_500b5c2bcc68735113fcc88ea3ee70a8" style="width: 100.0%; height: 100.0%;"><strong>Seafood Restaurant 1</strong><br>Cuisine: Pizza Place</div>`)[0];
+                popup_a26b171f6db9634b8fa8d59a61c7cde7.setContent(html_500b5c2bcc68735113fcc88ea3ee70a8);
+            
+        
+
+        marker_81422778569b879e2160c24b433608e7.bindPopup(popup_a26b171f6db9634b8fa8d59a61c7cde7)
+        ;
+
+        
+    
+    
+            marker_81422778569b879e2160c24b433608e7.bindTooltip(
+                `<div>
+                     Seafood Restaurant 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81422778569b879e2160c24b433608e7.setIcon(icon_f59e7ee6b1eb40d013ae8c21c600e240);
+            
+    
+            var marker_daa19e11c9d99eb50d7f5d81b8b664be = L.marker(
+                [40.69426523972467, -73.97513327149326],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_ce998beda377f177d8164e0f32830704 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkblue",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_712b7cf6b2a614c8b001c0ba39a3f658 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4dd7ce4b56cd468ac88f5dc868f22926 = $(`<div id="html_4dd7ce4b56cd468ac88f5dc868f22926" style="width: 100.0%; height: 100.0%;"><strong>Seafood Restaurant 2</strong><br>Cuisine: Seafood Restaurant</div>`)[0];
+                popup_712b7cf6b2a614c8b001c0ba39a3f658.setContent(html_4dd7ce4b56cd468ac88f5dc868f22926);
+            
+        
+
+        marker_daa19e11c9d99eb50d7f5d81b8b664be.bindPopup(popup_712b7cf6b2a614c8b001c0ba39a3f658)
+        ;
+
+        
+    
+    
+            marker_daa19e11c9d99eb50d7f5d81b8b664be.bindTooltip(
+                `<div>
+                     Seafood Restaurant 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_daa19e11c9d99eb50d7f5d81b8b664be.setIcon(icon_ce998beda377f177d8164e0f32830704);
+            
+    
+            var marker_95997c786560e3790713c84a5df77463 = L.marker(
+                [40.67234648485293, -74.04088477206628],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_d78149de0685bae16dd8e2ce017ddfa2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aece6967a2d869d553677b8315f33f0a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c759783c159eb87fdc3ed10e49113e7 = $(`<div id="html_3c759783c159eb87fdc3ed10e49113e7" style="width: 100.0%; height: 100.0%;"><strong>Steakhouse 3</strong><br>Cuisine: Italian Trattoria</div>`)[0];
+                popup_aece6967a2d869d553677b8315f33f0a.setContent(html_3c759783c159eb87fdc3ed10e49113e7);
+            
+        
+
+        marker_95997c786560e3790713c84a5df77463.bindPopup(popup_aece6967a2d869d553677b8315f33f0a)
+        ;
+
+        
+    
+    
+            marker_95997c786560e3790713c84a5df77463.bindTooltip(
+                `<div>
+                     Steakhouse 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_95997c786560e3790713c84a5df77463.setIcon(icon_d78149de0685bae16dd8e2ce017ddfa2);
+            
+    
+            var marker_0f25b98b9af41bc2a32db0f8026ad262 = L.marker(
+                [40.69067274850265, -73.96605177206048],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_595287fbe77a67b794f14bee3a9f41f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_27c4dfaba1e84cd76f53101472c01d47 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b52f78e43b2a8f030b1c55ab73b53393 = $(`<div id="html_b52f78e43b2a8f030b1c55ab73b53393" style="width: 100.0%; height: 100.0%;"><strong>Burger Joint 4</strong><br>Cuisine: Burger Joint</div>`)[0];
+                popup_27c4dfaba1e84cd76f53101472c01d47.setContent(html_b52f78e43b2a8f030b1c55ab73b53393);
+            
+        
+
+        marker_0f25b98b9af41bc2a32db0f8026ad262.bindPopup(popup_27c4dfaba1e84cd76f53101472c01d47)
+        ;
+
+        
+    
+    
+            marker_0f25b98b9af41bc2a32db0f8026ad262.bindTooltip(
+                `<div>
+                     Burger Joint 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f25b98b9af41bc2a32db0f8026ad262.setIcon(icon_595287fbe77a67b794f14bee3a9f41f5);
+            
+    
+            var marker_5901b4da0cb95033451b4c4887533a8d = L.marker(
+                [40.715519576618675, -73.95851994986491],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_5d8e39b82a0d0fc0178c78c343825bfb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a24744eeeeed43816ba0fe001d9718c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_924db01132adebc69a7024154254d421 = $(`<div id="html_924db01132adebc69a7024154254d421" style="width: 100.0%; height: 100.0%;"><strong>Italian Trattoria 5</strong><br>Cuisine: Italian Trattoria</div>`)[0];
+                popup_a24744eeeeed43816ba0fe001d9718c5.setContent(html_924db01132adebc69a7024154254d421);
+            
+        
+
+        marker_5901b4da0cb95033451b4c4887533a8d.bindPopup(popup_a24744eeeeed43816ba0fe001d9718c5)
+        ;
+
+        
+    
+    
+            marker_5901b4da0cb95033451b4c4887533a8d.bindTooltip(
+                `<div>
+                     Italian Trattoria 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5901b4da0cb95033451b4c4887533a8d.setIcon(icon_5d8e39b82a0d0fc0178c78c343825bfb);
+            
+    
+            var marker_efe4448cba71387e15bc1e456f255e9e = L.marker(
+                [40.72354313970801, -74.02314768299937],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_1cabccfc0b153530cc2eff2e035ce8d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7129cf9261539b1d1ecaf2152332238 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d2d9269e6b08efbdc0b3e3343ac8dd4 = $(`<div id="html_8d2d9269e6b08efbdc0b3e3343ac8dd4" style="width: 100.0%; height: 100.0%;"><strong>Burger Joint 6</strong><br>Cuisine: Cafe</div>`)[0];
+                popup_b7129cf9261539b1d1ecaf2152332238.setContent(html_8d2d9269e6b08efbdc0b3e3343ac8dd4);
+            
+        
+
+        marker_efe4448cba71387e15bc1e456f255e9e.bindPopup(popup_b7129cf9261539b1d1ecaf2152332238)
+        ;
+
+        
+    
+    
+            marker_efe4448cba71387e15bc1e456f255e9e.bindTooltip(
+                `<div>
+                     Burger Joint 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_efe4448cba71387e15bc1e456f255e9e.setIcon(icon_1cabccfc0b153530cc2eff2e035ce8d0);
+            
+    
+            var marker_9833e654ef5f0f1b4dbf6403e3b30bfc = L.marker(
+                [40.692163873703905, -74.03161176364867],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_ac62b848a8768b14a07222ec99ceb50e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32a57b456bda8980a5143d9cc86f6ace = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a5588be6145c51a5b7f54eb1a7d5895 = $(`<div id="html_6a5588be6145c51a5b7f54eb1a7d5895" style="width: 100.0%; height: 100.0%;"><strong>Burger Joint 7</strong><br>Cuisine: Sushi Restaurant</div>`)[0];
+                popup_32a57b456bda8980a5143d9cc86f6ace.setContent(html_6a5588be6145c51a5b7f54eb1a7d5895);
+            
+        
+
+        marker_9833e654ef5f0f1b4dbf6403e3b30bfc.bindPopup(popup_32a57b456bda8980a5143d9cc86f6ace)
+        ;
+
+        
+    
+    
+            marker_9833e654ef5f0f1b4dbf6403e3b30bfc.bindTooltip(
+                `<div>
+                     Burger Joint 7
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9833e654ef5f0f1b4dbf6403e3b30bfc.setIcon(icon_ac62b848a8768b14a07222ec99ceb50e);
+            
+    
+            var marker_e62028ea82a042765f18504eb333bc71 = L.marker(
+                [40.71310154619268, -74.04548001589552],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_d2b7ea6d2ffd4fb83f637e3c978c346a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c91a228c4d1d28702b9e9b3231e921d7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef6fef3f85a1e1c015a20401d8fb9d40 = $(`<div id="html_ef6fef3f85a1e1c015a20401d8fb9d40" style="width: 100.0%; height: 100.0%;"><strong>Steakhouse 8</strong><br>Cuisine: Pizza Place</div>`)[0];
+                popup_c91a228c4d1d28702b9e9b3231e921d7.setContent(html_ef6fef3f85a1e1c015a20401d8fb9d40);
+            
+        
+
+        marker_e62028ea82a042765f18504eb333bc71.bindPopup(popup_c91a228c4d1d28702b9e9b3231e921d7)
+        ;
+
+        
+    
+    
+            marker_e62028ea82a042765f18504eb333bc71.bindTooltip(
+                `<div>
+                     Steakhouse 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e62028ea82a042765f18504eb333bc71.setIcon(icon_d2b7ea6d2ffd4fb83f637e3c978c346a);
+            
+    
+            var marker_85b8503ea0abcd8f28d6fc058c56fb39 = L.marker(
+                [40.67398968470331, -73.98438050389056],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_3ec0049cb6a10ca5fe7ac6dbe091c14d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ca2284638547e04e8556c82c4d4f9f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2234ee222256c04e55ea25d4048b03f = $(`<div id="html_a2234ee222256c04e55ea25d4048b03f" style="width: 100.0%; height: 100.0%;"><strong>Cafe 9</strong><br>Cuisine: Burger Joint</div>`)[0];
+                popup_4ca2284638547e04e8556c82c4d4f9f9.setContent(html_a2234ee222256c04e55ea25d4048b03f);
+            
+        
+
+        marker_85b8503ea0abcd8f28d6fc058c56fb39.bindPopup(popup_4ca2284638547e04e8556c82c4d4f9f9)
+        ;
+
+        
+    
+    
+            marker_85b8503ea0abcd8f28d6fc058c56fb39.bindTooltip(
+                `<div>
+                     Cafe 9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_85b8503ea0abcd8f28d6fc058c56fb39.setIcon(icon_3ec0049cb6a10ca5fe7ac6dbe091c14d);
+            
+    
+            var marker_474c80556f445c34f61ba212dde91d72 = L.marker(
+                [40.67951716175318, -73.95630477770636],
+                {
+}
+            ).addTo(map_a26176df9b3505578b40fb5433cd1df7);
+        
+    
+            var icon_486c14f3a30e8078f4dc0a44777c37da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1031555d6a59ff3a4cab2b048ee95d86 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e886a3230a54bf973eb62c629845b561 = $(`<div id="html_e886a3230a54bf973eb62c629845b561" style="width: 100.0%; height: 100.0%;"><strong>Pizza Place 10</strong><br>Cuisine: Cafe</div>`)[0];
+                popup_1031555d6a59ff3a4cab2b048ee95d86.setContent(html_e886a3230a54bf973eb62c629845b561);
+            
+        
+
+        marker_474c80556f445c34f61ba212dde91d72.bindPopup(popup_1031555d6a59ff3a4cab2b048ee95d86)
+        ;
+
+        
+    
+    
+            marker_474c80556f445c34f61ba212dde91d72.bindTooltip(
+                `<div>
+                     Pizza Place 10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_474c80556f445c34f61ba212dde91d72.setIcon(icon_486c14f3a30e8078f4dc0a44777c37da);
+            
+</script>
+</html>

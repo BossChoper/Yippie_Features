@@ -1,10 +1,5 @@
-# Functional; gets restaurants within a certain area
-# Supposed to retrieve chain restaurants but nothing on that yet
-# Measured in meters; 10000 meters is only 6 miles
-# Missing some restaurants; restaurant is marked as chain if appears a second time
-# Restaurants are missing due to tags: HipCityVeg is "vegan restaurant", Fruitive is "Health food restaurant"
-# Other tags include: bakery, donut shop, etc.
-# outputs: restaurant.csv
+# Gets restaurants on google, notifies what might be chain restaurants for simplicity
+# Functional
 import requests
 import csv
 import time
@@ -83,11 +78,13 @@ def get_restaurants(location, radius=5000, output_file="restaurants.csv"):
         writer.writerows(restaurants)
 
 # Example usage
-get_restaurants("Washington D.C.", radius=10000)
+get_restaurants("San Francisco", radius=10)
 
-""" Example output: 
+""" Example output:
 name,address,place_id,types,phone,website,price_level,rating,reviews_count,is_chain
-Fairmont San Francisco,"950 Mason St, San Francisco, CA 94108, USA",ChIJN2S4EI2AhYAR9J4Qeh1U8Aw,"lodging, restaurant, food, point_of_interest, establishment",(415) 772-5000,https://www.fairmont.com/san-francisco/?goto=fiche_hotel&code_hotel=A576&merchantid=seo-maps-US-A576&sourceid=aw-cen&utm_medium=seo%20maps&utm_source=google%20Maps&utm_campaign=seo%20maps,,4.5,6824,False
-The Stinking Rose,"430 Columbus Ave, San Francisco, CA 94133, USA",ChIJW52Si_OAhYAR-jAC1-iQh_c,"restaurant, food, point_of_interest, establishment",(415) 781-7673,https://thestinkingrose.com/,3,4.2,4281,False
-Boulevard,"1 Mission St, San Francisco, CA 94105, USA",ChIJF-zbSmSAhYARvOafjdCRszQ,"bar, restaurant, food, point_of_interest, establishment",(415) 543-6084,https://www.boulevardrestaurant.com/,4,4.6,1586,False
+Hotel Omni,"San Francisco, CA 94103, USA",ChIJnUe-PACBhYARr5OdOFgxzd0,"restaurant, food, point_of_interest, establishment",,,,,,False
+Sf-mandarin,"San Francisco online, San Francisco, CA 94103, USA",ChIJneLGDgCBhYARQiqKeK1Th7Y,"restaurant, food, point_of_interest, establishment",,http://www.sf-mandarin.com/,,,,False
+Mexirean Grill & Resto Br,"1400 Tarusan Street, San Francisco, CA 94103, USA",ChIJL4oMO26BhYARjNi6g_nI3Ao,"bar, restaurant, food, point_of_interest, establishment",0951 559 5515,,,,,False
+Tony’s pizza,"San Francisco, CA 94103, USA",ChIJ4biyLACBhYARZgH-IwDC9NA,"restaurant, food, point_of_interest, establishment",,,,,,False
+
 """

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Map</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Prop Types -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.8.1/prop-types.min.js"></script>
+  <!-- React and ReactDOM -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <!-- Babel for JSX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div id="root" class="min-h-screen"></div>
+
+  <script type="text/babel">
+    // Mock coordinates for cities (approximate center points)
+    const mockCoordinates = {
+      'Washington, DC': [38.9072, -77.0369],
+      'Arlington, VA': [38.8790, -77.1068],
+      'Bethesda, MD': [38.9847, -77.0947],
+      'Alexandria, VA': [38.8048, -77.0469],
+      'Silver Spring, MD': [38.9907, -77.0261],
+      'Takoma Park, MD': [38.9779, -77.0075],
+      'Hyattsville, MD': [38.9559, -76.9455],
+      'Falls Church, VA': [38.8823, -77.1711],
+      'Riverdale, MD': [38.9637, -76.9350],
+      'College Park, MD': [38.9897, -76.9378],
+      'Chevy Chase, MD': [38.9712, -77.0789]
+    };
+
+    // Generating mock coordinates based on address
+    const getMockCoordinates = (address) => {
+      for (const [city, coords] of Object.entries(mockCoordinates)) {
+        if (address.includes(city)) {
+          // Add slight random offset to avoid overlapping markers
+          const offsetLat = (Math.random() - 0.5) * 0.01;
+          const offsetLng = (Math.random() - 0.5) * 0.01;
+          return [coords[0] + offsetLat, coords[1] + offsetLng];
+        }
+      }
+      // Default to Washington, DC if city not found
+      return [38.9072, -77.0369];
+    };
+
+    // Processing and cleaning CSV data
+    const processAndCleanData = (data) => {
+      return data.map(row => ({
+        name: row['name']?.trim() || 'Unknown',
+        address: row['address']?.trim() || 'No address',
+        place_id: row['place_id']?.trim() || '',
+        types: row['types']?.trim()?.split(', ') || [],
+        phone: row['phone']?.trim() || 'N/A',
+        website: row['website']?.trim() || 'N/A',
+        price_level: parseInt(row['price_level']) || 0,
+        rating: parseFloat(row['rating']) || 0,
+        reviews_count: parseInt(row['reviews_count']) || 0,
+        is_chain: row['is_chain']?.trim()?.toLowerCase() === 'true',
+        category: row['category']?.trim() || 'Unknown',
+        coordinates: getMockCoordinates(row['address'] || '')
+      })).filter(row => row.name !== 'Unknown' && row.coordinates);
+    };
+
+    // Map Screen Component
+    const MapScreen = ({ restaurants, setSelectedRestaurant }) => {
+      React.useEffect(() => {
+        // Initializing map
+        const map = L.map('map').setView([38.9072, -77.0369], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Adding markers
+        restaurants.forEach(restaurant => {
+          const marker = L.marker(restaurant.coordinates)
+            .addTo(map)
+            .bindPopup(`
+              <b>${restaurant.name}</b><br>
+              ${restaurant.address}<br>
+              Rating: ${restaurant.rating.toFixed(1)}<br>
+              <button onclick="window.selectRestaurant('${restaurant.place_id}')">View Details</button>
+            `);
+        });
+
+        // Handling marker popup button click
+        window.selectRestaurant = (place_id) => {
+          const restaurant = restaurants.find(r => r.place_id === place_id);
+          if (restaurant) setSelectedRestaurant(restaurant);
+        };
+
+        return () => {
+          map.remove();
+        };
+      }, [restaurants]);
+
+      return (
+        <div className="h-screen w-full">
+          <div id="map" className="h-full w-full"></div>
+        </div>
+      );
+    };
+
+    // Restaurant Info Screen Component
+    const RestaurantInfoScreen = ({ restaurant, setSelectedRestaurant }) => {
+      return (
+        <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-6">
+          <button
+            onClick={() => setSelectedRestaurant(null)}
+            className="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Back to Map
+          </button>
+          <h1 className="text-3xl font-bold mb-4">{restaurant.name}</h1>
+          <p className="text-gray-700 mb-2"><strong>Address:</strong> {restaurant.address}</p>
+          <p className="text-gray-700 mb-2"><strong>Phone:</strong> {restaurant.phone}</p>
+          <p className="text-gray-700 mb-2"><strong>Website:</strong> 
+            {restaurant.website !== 'N/A' ? (
+              <a href={restaurant.website} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                Visit Website
+              </a>
+            ) : 'N/A'}
+          </p>
+          <p className="text-gray-700 mb-2"><strong>Price Level:</strong> {'$'.repeat(restaurant.price_level) || 'Unknown'}</p>
+          <p className="text-gray-700 mb-2"><strong>Rating:</strong> {restaurant.rating.toFixed(1)} / 5</p>
+          <p className="text-gray-700 mb-2"><strong>Reviews:</strong> {restaurant.reviews_count}</p>
+          <p className="text-gray-700 mb-2"><strong>Chain:</strong> {restaurant.is_chain ? 'Yes' : 'No'}</p>
+          <p className="text-gray-700 mb-2"><strong>Category:</strong> {restaurant.category}</p>
+        </div>
+      );
+    };
+
+    // Main App Component
+    const App = () => {
+      const [restaurants, setRestaurants] = React.useState([]);
+      const [selectedRestaurant, setSelectedRestaurant] = React.useState(null);
+      const [loading, setLoading] = React.useState(true);
+
+      // Loading and parsing CSV data
+      React.useEffect(() => {
+  fetch('restaurants.csv')
+    .then(response => response.text())
+    .then(csvData => {
+      Papa.parse(csvData, {
+        header: true,
+        skipEmptyLines: true,
+        transformHeader: header => header.trim().replace(/^"|"$/g, ''),
+        transform: value => value.trim().replace(/^"|"$/g, ''),
+        complete: (results) => {
+          const cleanedData = processAndCleanData(results.data);
+          setRestaurants(cleanedData);
+          setLoading(false);
+        },
+        error: (err) => {
+          console.error('Error parsing CSV:', err);
+          setLoading(false);
+        }
+      });
+    })
+    .catch(err => {
+      console.error('Error fetching CSV:', err);
+      setLoading(false);
+    });
+}, []);
+
+      if (loading) {
+        return <div className="flex justify-center items-center h-screen text-xl">Loading...</div>;
+      }
+
+      return (
+        <div className="min-h-screen">
+          {selectedRestaurant ? (
+            <RestaurantInfoScreen restaurant={selectedRestaurant} setSelectedRestaurant={setSelectedRestaurant} />
+          ) : (
+            <MapScreen restaurants={restaurants} setSelectedRestaurant={setSelectedRestaurant} />
+          )}
+        </div>
+      );
+    };
+
+    // Rendering the app
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

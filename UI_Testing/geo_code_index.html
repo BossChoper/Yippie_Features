@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Map with Geocoding</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Prop Types -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.8.1/prop-types.min.js"></script>
+  <!-- React and ReactDOM -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <!-- Babel for JSX -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <!-- PapaParse for CSV parsing -->
+  <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div id="root" className="min-h-screen"></div>
+
+  <script type="text/babel">
+    // Geocoding function using Nominatim API
+    const geocodeAddress = async (address, cache) => {
+      // Check cache first
+      if (cache[address]) {
+        return cache[address];
+      }
+
+      try {
+        // Encode address for URL
+        const encodedAddress = encodeURIComponent(address);
+        const url = `https://nominatim.openstreetmap.org/search?q=${encodedAddress}&format=json&limit=1`;
+
+        // Fetch geocoding data
+        const response = await fetch(url, {
+          headers: {
+            'User-Agent': 'RestaurantMapApp/1.0 (contact: example@example.com)' // Nominatim requires User-Agent
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.length > 0) {
+          const { lat, lon } = data[0];
+          const coordinates = [parseFloat(lat), parseFloat(lon)];
+          cache[address] = coordinates; // Store in cache
+          return coordinates;
+        } else {
+          console.warn(`No coordinates found for address: ${address}`);
+          return [38.9072, -77.0369]; // Default to Washington, DC
+        }
+      } catch (error) {
+        console.error(`Geocoding error for ${address}:`, error);
+        return [38.9072, -77.0369]; // Fallback coordinates
+      }
+    };
+
+    // Utility to add delay for rate limiting
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    // Process and clean CSV data with async geocoding
+    const processAndCleanData = async (data) => {
+      const cache = {}; // Cache for geocoding results
+      const cleanedData = [];
+
+      for (const row of data) {
+        const address = row['address']?.trim() || 'No address';
+        if (address === 'No address') continue; // Skip invalid addresses
+
+        // Geocode with delay to respect Nominatim rate limit (1 req/sec)
+        const coordinates = await geocodeAddress(address, cache);
+        await delay(1100); // Slightly over 1 second to be safe
+
+        cleanedData.push({
+          name: row['name']?.trim() || 'Unknown',
+          address: address,
+          place_id: row['place_id']?.trim() || '',
+          types: row['types']?.trim()?.split(', ') || [],
+          phone: row['phone']?.trim() || 'N/A',
+          website: row['website']?.trim() || 'N/A',
+          price_level: parseInt(row['price_level']) || 0,
+          rating: parseFloat(row['rating']) || 0,
+          reviews_count: parseInt(row['reviews_count']) || 0,
+          is_chain: row['is_chain']?.trim()?.toLowerCase() === 'true',
+          category: row['category']?.trim() || 'Unknown',
+          coordinates: coordinates
+        });
+      }
+
+      return cleanedData.filter(row => row.name !== 'Unknown' && row.coordinates);
+    };
+
+    // Map Screen Component
+    const MapScreen = ({ restaurants, setSelectedRestaurant }) => {
+      React.useEffect(() => {
+        // Initialize map
+        const map = L.map('map').setView([38.9072, -77.0369], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers
+        restaurants.forEach(restaurant => {
+          const marker = L.marker(restaurant.coordinates)
+            .addTo(map)
+            .bindPopup(`
+              <b>${restaurant.name}</b><br>
+              ${restaurant.address}<br>
+              Rating: ${restaurant.rating.toFixed(1)}<br>
+              <button onclick="window.selectRestaurant('${restaurant.place_id}')">View Details</button>
+            `);
+        });
+
+        // Handle marker popup button click
+        window.selectRestaurant = (place_id) => {
+          const restaurant = restaurants.find(r => r.place_id === place_id);
+          if (restaurant) setSelectedRestaurant(restaurant);
+        };
+
+        return () => {
+          map.remove();
+        };
+      }, [restaurants]);
+
+      return (
+        <div className="h-screen w-full">
+          <div id="map" className="h-full w-full"></div>
+        </div>
+      );
+    };
+
+    // Restaurant Info Screen Component
+    const RestaurantInfoScreen = ({ restaurant, setSelectedRestaurant }) => {
+      return (
+        <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-6">
+          <button
+            onClick={() => setSelectedRestaurant(null)}
+            className="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Back to Map
+          </button>
+          <h1 className="text-3xl font-bold mb-4">{restaurant.name}</h1>
+          <p className="text-gray-700 mb-2"><strong>Address:</strong> {restaurant.address}</p>
+          <p className="text-gray-700 mb-2"><strong>Phone:</strong> {restaurant.phone}</p>
+          <p className="text-gray-700 mb-2"><strong>Website:</strong> 
+            {restaurant.website !== 'N/A' ? (
+              <a href={restaurant.website} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                Visit Website
+              </a>
+            ) : 'N/A'}
+          </p>
+          <p className="text-gray-700 mb-2"><strong>Price Level:</strong> {'$'.repeat(restaurant.price_level) || 'Unknown'}</p>
+          <p className="text-gray-700 mb-2"><strong>Rating:</strong> {restaurant.rating.toFixed(1)} / 5</p>
+          <p className="text-gray-700 mb-2"><strong>Reviews:</strong> {restaurant.reviews_count}</p>
+          <p className="text-gray-700 mb-2"><strong>Chain:</strong> {restaurant.is_chain ? 'Yes' : 'No'}</p>
+          <p className="text-gray-700 mb-2"><strong>Category:</strong> {restaurant.category}</p>
+        </div>
+      );
+    };
+
+    // Main App Component
+    const App = () => {
+      const [restaurants, setRestaurants] = React.useState([]);
+      const [selectedRestaurant, setSelectedRestaurant] = React.useState(null);
+      const [loading, setLoading] = React.useState(true);
+
+      // Load and parse CSV data
+      React.useEffect(() => {
+        fetch('restaurants.csv')
+          .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch CSV');
+            return response.text();
+          })
+          .then(csvData => {
+            Papa.parse(csvData, {
+              header: true,
+              skipEmptyLines: true,
+              transformHeader: header => header.trim().replace(/^"|"$/g, ''),
+              transform: value => value.trim().replace(/^"|"$/g, ''),
+              complete: async (results) => {
+                const cleanedData = await processAndCleanData(results.data);
+                setRestaurants(cleanedData);
+                setLoading(false);
+              },
+              error: (err) => {
+                console.error('Error parsing CSV:', err);
+                setLoading(false);
+              }
+            });
+          })
+          .catch(err => {
+            console.error('Error fetching CSV:', err);
+            setLoading(false);
+          });
+      }, []);
+
+      if (loading) {
+        return <div className="flex justify-center items-center h-screen text-xl">Loading...</div>;
+      }
+
+      return (
+        <div className="min-h-screen">
+          {selectedRestaurant ? (
+            <RestaurantInfoScreen restaurant={selectedRestaurant} setSelectedRestaurant={setSelectedRestaurant} />
+          ) : (
+            <MapScreen restaurants={restaurants} setSelectedRestaurant={setSelectedRestaurant} />
+          )}
+        </div>
+      );
+    };
+
+    // Render the app
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

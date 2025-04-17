@@ -1,0 +1,48 @@
+1. Review Analysis
+2. Restaurant Finding using Yelp
+- Also can use Google Maps API
+3. Ingredient Listing
+4. Menu Item -> Ingredient Listing
+5. Nutrition Label Generation
+6. Menu Item querying
+7. Diet Profiles
+8. Meal Planning / Building based on Diet and Nutrient
+9. Location-based Notification System
+10. Vegan Donut Finder
+11. Review Assumption generator
+12. Web Scraper for Menus and Food Images
+
+TBA:
+13. Real-time restaurant menu and business updates
+14. User authentication
+15. 
+
+Reviews
+1. Review Analysis
+11. Review Assumption generator
+
+Database
+2. Restaurant Finding using Yelp
+- Also can use Google Maps API
+3. Ingredient Listing
+13. Real-time restaurant menu and business updates
+
+Users
+7. Diet Profiles
+8. Meal Planning + Ingredient add or swap / Building based on Diet and Nutrient
+9. Location-based Notification System
+
+Food
+3. Ingredient Listing
+4. Menu Item -> Ingredient Listing
+5. Nutrition Label Generation
+6. Menu Item querying
+
+Queries
+2. Restaurant Finding using Yelp
+- Also can use Google Maps API
+5. Nutrition Label Generation
+
+Information
+12. Web Scraper for Menus and Food Images
+13. Real-time restaurant menu and business updates

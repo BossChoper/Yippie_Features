@@ -1,0 +1,5 @@
+name,address,place_id,types,phone,website,price_level,rating,reviews_count,is_chain
+Hotel Omni,"San Francisco, CA 94103, USA",ChIJnUe-PACBhYARr5OdOFgxzd0,"restaurant, food, point_of_interest, establishment",,,,,,False
+Sf-mandarin,"San Francisco online, San Francisco, CA 94103, USA",ChIJneLGDgCBhYARQiqKeK1Th7Y,"restaurant, food, point_of_interest, establishment",,http://www.sf-mandarin.com/,,,,False
+Mexirean Grill & Resto Br,"1400 Tarusan Street, San Francisco, CA 94103, USA",ChIJL4oMO26BhYARjNi6g_nI3Ao,"bar, restaurant, food, point_of_interest, establishment",0951 559 5515,,,,,False
+Tony’s pizza,"San Francisco, CA 94103, USA",ChIJ4biyLACBhYARZgH-IwDC9NA,"restaurant, food, point_of_interest, establishment",,,,,,False

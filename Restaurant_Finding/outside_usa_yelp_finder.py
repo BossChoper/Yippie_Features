@@ -1,0 +1,95 @@
+# Find restaurants such as mcdonalds outside US
+# Restaurants outside US may have different menus even as chain restaurants
+import requests
+import re
+from urllib.parse import quote
+
+GOOGLE_MAPS_API_KEY = "YOUR_GOOGLE_MAPS_API_KEY"
+YELP_API_KEY = "YOUR_YELP_API_KEY"
+
+def get_google_restaurant(restaurant_name, location):
+    """Fetch restaurant details from Google Maps API"""
+    url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+    params = {
+        "query": restaurant_name,
+        "location": location,
+        "radius": 5000,
+        "key": GOOGLE_MAPS_API_KEY
+    }
+    
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("results", [])[0] if data.get("results") else None
+    return None
+
+def search_yelp_business(restaurant_name, location, country="US"):
+    """Search for matching restaurant on Yelp in a specific country"""
+    url = "https://api.yelp.com/v3/businesses/search"
+    headers = {"Authorization": f"Bearer {YELP_API_KEY}"}
+    params = {
+        "term": restaurant_name,
+        "latitude": location.split(",")[0],
+        "longitude": location.split(",")[1],
+        "limit": 1,
+        "country": country  # Added country parameter
+    }
+    
+    response = requests.get(url, headers=headers, params=params)
+    if response.status_code == 200:
+        data = response.json()
+        return data.get("businesses", [])[0] if data.get("businesses") else None
+    return None
+
+def compare_restaurants(google_data, yelp_data):
+    """Compare details between Google and Yelp listings"""
+    comparison = {
+        "name": (google_data.get("name"), yelp_data.get("name")),
+        "address": (google_data.get("formatted_address"), 
+                   ", ".join(yelp_data.get("location", {}).get("display_address", []))),
+        "rating": (google_data.get("rating"), yelp_data.get("rating")),
+        "reviews": (google_data.get("user_ratings_total"), yelp_data.get("review_count")),
+        "website": (f"https://www.google.com/maps/place/?q=place_id:{google_data.get('place_id')}",
+                   yelp_data.get("url"))
+    }
+    return comparison
+
+def format_comparison(comparison):
+    """Format the comparison results for display"""
+    print("\n🔍 Restaurant Comparison Results:")
+    print(f"Name: {comparison['name'][0]} (Google) vs {comparison['name'][1]} (Yelp)")
+    print(f"\n📍 Address:")
+    print(f"- Google: {comparison['address'][0]}")
+    print(f"- Yelp: {comparison['address'][1]}")
+    print(f"\n⭐ Ratings:")
+    print(f"- Google: {comparison['rating'][0]}/5")
+    print(f"- Yelp: {comparison['rating'][1]}/5")
+    print(f"\n📝 Reviews:")
+    print(f"- Google: {comparison['reviews'][0]}")
+    print(f"- Yelp: {comparison['reviews'][1]}")
+    print(f"\n🌐 Links:")
+    print(f"- Google Maps: {comparison['website'][0]}")
+    print(f"- Yelp: {comparison['website'][1]}")
+
+if __name__ == "__main__":
+    # User input
+    restaurant_name = input("Enter restaurant name: ")
+    location = input("Enter location (latitude,longitude): ")
+    country_code = input("Enter the 2-letter country code (e.g., JP for Japan): ").upper()
+    
+    # Get data from both platforms
+    google_data = get_google_restaurant(restaurant_name, location)
+    
+    if not google_data:
+        print("No results found on Google Maps")
+        exit()
+    
+    yelp_data = search_yelp_business(restaurant_name, location, country_code)
+    
+    if not yelp_data:
+        print("No matching Yelp listing found in that country")
+        exit()
+    
+    # Compare and display results
+    comparison = compare_restaurants(google_data, yelp_data)
+    format_comparison(comparison)

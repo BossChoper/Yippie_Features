@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d3fc3bd2ceb5d0355897277134d64543 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d3fc3bd2ceb5d0355897277134d64543" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d3fc3bd2ceb5d0355897277134d64543 = L.map(
+                "map_d3fc3bd2ceb5d0355897277134d64543",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a8be93c345988b34cea9e9e1f6759152 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a8be93c345988b34cea9e9e1f6759152.addTo(map_d3fc3bd2ceb5d0355897277134d64543);
+        
+    
+            var marker_a4cb69f324a68ce44f11a07ab1d5f7ca = L.marker(
+                [40.7128, -74.006],
+                {
+}
+            ).addTo(map_d3fc3bd2ceb5d0355897277134d64543);
+        
+    
+            var icon_00f243fcf5a6547abbce1d2a356c3c0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_871a4c510ba3166a72ef9727b11029b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_478ed7d75ba7eac349c87ea19adc3972 = $(`<div id="html_478ed7d75ba7eac349c87ea19adc3972" style="width: 100.0%; height: 100.0%;">The Big Apple</div>`)[0];
+                popup_871a4c510ba3166a72ef9727b11029b1.setContent(html_478ed7d75ba7eac349c87ea19adc3972);
+            
+        
+
+        marker_a4cb69f324a68ce44f11a07ab1d5f7ca.bindPopup(popup_871a4c510ba3166a72ef9727b11029b1)
+        ;
+
+        
+    
+    
+            marker_a4cb69f324a68ce44f11a07ab1d5f7ca.bindTooltip(
+                `<div>
+                     New York
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a4cb69f324a68ce44f11a07ab1d5f7ca.setIcon(icon_00f243fcf5a6547abbce1d2a356c3c0a);
+            
+    
+            var marker_354d2a2b4eef2151937c1c880f169b5b = L.marker(
+                [48.8566, 2.3522],
+                {
+}
+            ).addTo(map_d3fc3bd2ceb5d0355897277134d64543);
+        
+    
+            var icon_e6cfaf615621d5ac7c18fad8ef573e53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22ae02d93d296db8c0b8cad73f75c285 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c54792be3217b1f556d9f822b5467d0b = $(`<div id="html_c54792be3217b1f556d9f822b5467d0b" style="width: 100.0%; height: 100.0%;">City of Lights</div>`)[0];
+                popup_22ae02d93d296db8c0b8cad73f75c285.setContent(html_c54792be3217b1f556d9f822b5467d0b);
+            
+        
+
+        marker_354d2a2b4eef2151937c1c880f169b5b.bindPopup(popup_22ae02d93d296db8c0b8cad73f75c285)
+        ;
+
+        
+    
+    
+            marker_354d2a2b4eef2151937c1c880f169b5b.bindTooltip(
+                `<div>
+                     Paris
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_354d2a2b4eef2151937c1c880f169b5b.setIcon(icon_e6cfaf615621d5ac7c18fad8ef573e53);
+            
+    
+            var marker_89681278597bc40031d2a80b4de8034e = L.marker(
+                [35.6762, 139.6503],
+                {
+}
+            ).addTo(map_d3fc3bd2ceb5d0355897277134d64543);
+        
+    
+            var icon_d0cd22dd13eb9e8392eda969927adfda = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7b03f2d7acbfbe077ae1e1c140d467a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2688cd033cb54771511566cd87f07018 = $(`<div id="html_2688cd033cb54771511566cd87f07018" style="width: 100.0%; height: 100.0%;">Technology Hub</div>`)[0];
+                popup_7b03f2d7acbfbe077ae1e1c140d467a5.setContent(html_2688cd033cb54771511566cd87f07018);
+            
+        
+
+        marker_89681278597bc40031d2a80b4de8034e.bindPopup(popup_7b03f2d7acbfbe077ae1e1c140d467a5)
+        ;
+
+        
+    
+    
+            marker_89681278597bc40031d2a80b4de8034e.bindTooltip(
+                `<div>
+                     Tokyo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_89681278597bc40031d2a80b4de8034e.setIcon(icon_d0cd22dd13eb9e8392eda969927adfda);
+            
+    
+            var marker_d10d9f1f952b96656192ef7d37883410 = L.marker(
+                [-33.8688, 151.2093],
+                {
+}
+            ).addTo(map_d3fc3bd2ceb5d0355897277134d64543);
+        
+    
+            var icon_0cd90f0431edb8b4de10a035757ffdd1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c35e90252e58a6cb2577f23f65027ba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cfcd3681bcb995dfb8159781edecd5c0 = $(`<div id="html_cfcd3681bcb995dfb8159781edecd5c0" style="width: 100.0%; height: 100.0%;">Opera House</div>`)[0];
+                popup_8c35e90252e58a6cb2577f23f65027ba.setContent(html_cfcd3681bcb995dfb8159781edecd5c0);
+            
+        
+
+        marker_d10d9f1f952b96656192ef7d37883410.bindPopup(popup_8c35e90252e58a6cb2577f23f65027ba)
+        ;
+
+        
+    
+    
+            marker_d10d9f1f952b96656192ef7d37883410.bindTooltip(
+                `<div>
+                     Sydney
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d10d9f1f952b96656192ef7d37883410.setIcon(icon_0cd90f0431edb8b4de10a035757ffdd1);
+            
+    
+            var marker_6daa8229a53ec24fc9a536c503eba005 = L.marker(
+                [30.0444, 31.2357],
+                {
+}
+            ).addTo(map_d3fc3bd2ceb5d0355897277134d64543);
+        
+    
+            var icon_7e1fb9aa967c753c62e2185c18018ed9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85614671fbae86d40e85b5468584459d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_762d169b4341660b23bede1a3479e088 = $(`<div id="html_762d169b4341660b23bede1a3479e088" style="width: 100.0%; height: 100.0%;">Pyramids of Giza</div>`)[0];
+                popup_85614671fbae86d40e85b5468584459d.setContent(html_762d169b4341660b23bede1a3479e088);
+            
+        
+
+        marker_6daa8229a53ec24fc9a536c503eba005.bindPopup(popup_85614671fbae86d40e85b5468584459d)
+        ;
+
+        
+    
+    
+            marker_6daa8229a53ec24fc9a536c503eba005.bindTooltip(
+                `<div>
+                     Cairo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6daa8229a53ec24fc9a536c503eba005.setIcon(icon_7e1fb9aa967c753c62e2185c18018ed9);
+            
+    
+            var circle_marker_8afd8d055de446e95c1c8c3445c38d76 = L.circleMarker(
+                [55.7558, 37.6173],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.0, "stroke": true, "weight": 3}
+            ).addTo(map_d3fc3bd2ceb5d0355897277134d64543);
+        
+    
+        var popup_b15cfb62f8fcc331e134e36e09009da7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_775e04a8cfdf598c7ef953d210e2148a = $(`<div id="html_775e04a8cfdf598c7ef953d210e2148a" style="width: 100.0%; height: 100.0%;">Moscow</div>`)[0];
+                popup_b15cfb62f8fcc331e134e36e09009da7.setContent(html_775e04a8cfdf598c7ef953d210e2148a);
+            
+        
+
+        circle_marker_8afd8d055de446e95c1c8c3445c38d76.bindPopup(popup_b15cfb62f8fcc331e134e36e09009da7)
+        ;
+
+        
+    
+    
+            var circle_marker_e976a060b97cf3e75c44738da6106d61 = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.0, "stroke": true, "weight": 3}
+            ).addTo(map_d3fc3bd2ceb5d0355897277134d64543);
+        
+    
+        var popup_3a9a83bb4f2453c867f9a5b2adab0b0b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8613571a5308b265110f39e053d3e03e = $(`<div id="html_8613571a5308b265110f39e053d3e03e" style="width: 100.0%; height: 100.0%;">Beijing</div>`)[0];
+                popup_3a9a83bb4f2453c867f9a5b2adab0b0b.setContent(html_8613571a5308b265110f39e053d3e03e);
+            
+        
+
+        circle_marker_e976a060b97cf3e75c44738da6106d61.bindPopup(popup_3a9a83bb4f2453c867f9a5b2adab0b0b)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_36c53797a8813afa6bd94147dfd78cff {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_36c53797a8813afa6bd94147dfd78cff" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_36c53797a8813afa6bd94147dfd78cff = L.map(
+                "map_36c53797a8813afa6bd94147dfd78cff",
+                {
+                    center: [40.7128, -74.006],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_2848d91bc54022089740e70570b8624a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_2848d91bc54022089740e70570b8624a.addTo(map_36c53797a8813afa6bd94147dfd78cff);
+        
+    
+            var marker_cluster_7d3d843bb26619adebb7e65d54b73d7f = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_38eb26f9e993040a6766f6e7d8b075b9 = L.marker(
+                [40.7156143, -74.00896709999999],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_c77d19164fe60b87f1839b38768d40b6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_07aeb90408f7c3ffb415e29568518e46 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c2a26acaa80d1eb836f64b06467e1728 = $(`<div id="html_c2a26acaa80d1eb836f64b06467e1728" style="width: 100.0%; height: 100.0%;">         <b>The Frederick Hotel</b><br>         Address: 95 West Broadway, New York<br>         Types: bar, lodging, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_07aeb90408f7c3ffb415e29568518e46.setContent(html_c2a26acaa80d1eb836f64b06467e1728);
+            
+        
+
+        marker_38eb26f9e993040a6766f6e7d8b075b9.bindPopup(popup_07aeb90408f7c3ffb415e29568518e46)
+        ;
+
+        
+    
+    
+                marker_38eb26f9e993040a6766f6e7d8b075b9.setIcon(icon_c77d19164fe60b87f1839b38768d40b6);
+            
+    
+            var marker_d4c0e45767abe679bf1fd8bc189ed557 = L.marker(
+                [40.7470222, -73.9900333],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_301e3ba4e55e04b6badd3fe76b58ee80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_72619f54098e4e0b25a55855279cb759 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eb059fe9d42f57276ebf09320565b4f3 = $(`<div id="html_eb059fe9d42f57276ebf09320565b4f3" style="width: 100.0%; height: 100.0%;">         <b>Kimpton Hotel Eventi</b><br>         Address: 851 6th Avenue, New York<br>         Types: lodging, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_72619f54098e4e0b25a55855279cb759.setContent(html_eb059fe9d42f57276ebf09320565b4f3);
+            
+        
+
+        marker_d4c0e45767abe679bf1fd8bc189ed557.bindPopup(popup_72619f54098e4e0b25a55855279cb759)
+        ;
+
+        
+    
+    
+                marker_d4c0e45767abe679bf1fd8bc189ed557.setIcon(icon_301e3ba4e55e04b6badd3fe76b58ee80);
+            
+    
+            var marker_6c82f680e7dca177ae69bb2dfdd22269 = L.marker(
+                [40.679225, -73.98316200000001],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_f0f545449af1547f51ba55f51809c875 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af7c0b6670379cea7b5e9c732bc28f56 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c8ad49ece3bbde70afb4c0396e5fef59 = $(`<div id="html_c8ad49ece3bbde70afb4c0396e5fef59" style="width: 100.0%; height: 100.0%;">         <b>Union Hotel Brooklyn</b><br>         Address: 611 Degraw Street, Brooklyn<br>         Types: bar, lodging, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_af7c0b6670379cea7b5e9c732bc28f56.setContent(html_c8ad49ece3bbde70afb4c0396e5fef59);
+            
+        
+
+        marker_6c82f680e7dca177ae69bb2dfdd22269.bindPopup(popup_af7c0b6670379cea7b5e9c732bc28f56)
+        ;
+
+        
+    
+    
+                marker_6c82f680e7dca177ae69bb2dfdd22269.setIcon(icon_f0f545449af1547f51ba55f51809c875);
+            
+    
+            var marker_1bd5994e010dd93f710eb61111f17ec9 = L.marker(
+                [40.73, -74.00072779999999],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_a195b5d2348d13a82cf9be030c51c988 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d7cf5c96f3ea76191973ecb8d3d4e8d8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6156b69c3711ccf0765e0da42597eb77 = $(`<div id="html_6156b69c3711ccf0765e0da42597eb77" style="width: 100.0%; height: 100.0%;">         <b>Artichoke Basille's Pizza</b><br>         Address: 111 MacDougal Street, New York<br>         Types: restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_d7cf5c96f3ea76191973ecb8d3d4e8d8.setContent(html_6156b69c3711ccf0765e0da42597eb77);
+            
+        
+
+        marker_1bd5994e010dd93f710eb61111f17ec9.bindPopup(popup_d7cf5c96f3ea76191973ecb8d3d4e8d8)
+        ;
+
+        
+    
+    
+                marker_1bd5994e010dd93f710eb61111f17ec9.setIcon(icon_a195b5d2348d13a82cf9be030c51c988);
+            
+    
+            var marker_21d7ad353a4e16893bd2b2bf86f7611f = L.marker(
+                [40.70383419999999, -73.9947936],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_ada7e95c04e75f66b6031bd0b0cc7c01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f1ebd226a4997d2ee637d4318f9c6b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_301e8bcd25aa4c6afde01d501ab543ac = $(`<div id="html_301e8bcd25aa4c6afde01d501ab543ac" style="width: 100.0%; height: 100.0%;">         <b>The River Café</b><br>         Address: 1 Water Street, Brooklyn<br>         Types: bar, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_7f1ebd226a4997d2ee637d4318f9c6b1.setContent(html_301e8bcd25aa4c6afde01d501ab543ac);
+            
+        
+
+        marker_21d7ad353a4e16893bd2b2bf86f7611f.bindPopup(popup_7f1ebd226a4997d2ee637d4318f9c6b1)
+        ;
+
+        
+    
+    
+                marker_21d7ad353a4e16893bd2b2bf86f7611f.setIcon(icon_ada7e95c04e75f66b6031bd0b0cc7c01);
+            
+    
+            var marker_ceab4331516692416a84fa28613bd31a = L.marker(
+                [40.7041262, -74.01034229999999],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_a5252f6ffbdcda7bc91ab64e5d0165e4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1d697bf1d0e2f6e6311e1cca65ad6ede = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_69508eb78c78119caea256a35483d230 = $(`<div id="html_69508eb78c78119caea256a35483d230" style="width: 100.0%; height: 100.0%;">         <b>Beckett's Sports Bar</b><br>         Address: 81 Pearl Street, 48 Stone Street, New York<br>         Types: bar, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_1d697bf1d0e2f6e6311e1cca65ad6ede.setContent(html_69508eb78c78119caea256a35483d230);
+            
+        
+
+        marker_ceab4331516692416a84fa28613bd31a.bindPopup(popup_1d697bf1d0e2f6e6311e1cca65ad6ede)
+        ;
+
+        
+    
+    
+                marker_ceab4331516692416a84fa28613bd31a.setIcon(icon_a5252f6ffbdcda7bc91ab64e5d0165e4);
+            
+    
+            var marker_0bd0228aca0ec5fe042957f2c699abf2 = L.marker(
+                [40.7358891, -74.0049542],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_01930d0ded9af796896c7cd0ab6a7812 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d90c76bd84a16898c4d5068f5d82473 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e9ba72a0aaa92943ec0fb7369e3725e2 = $(`<div id="html_e9ba72a0aaa92943ec0fb7369e3725e2" style="width: 100.0%; height: 100.0%;">         <b>Magnolia Bakery</b><br>         Address: 401 Bleecker Street, New York<br>         Types: bakery, restaurant, store, point_of_interest, food, establishment         </div>`)[0];
+                popup_9d90c76bd84a16898c4d5068f5d82473.setContent(html_e9ba72a0aaa92943ec0fb7369e3725e2);
+            
+        
+
+        marker_0bd0228aca0ec5fe042957f2c699abf2.bindPopup(popup_9d90c76bd84a16898c4d5068f5d82473)
+        ;
+
+        
+    
+    
+                marker_0bd0228aca0ec5fe042957f2c699abf2.setIcon(icon_01930d0ded9af796896c7cd0ab6a7812);
+            
+    
+            var marker_0c96a42b8ce1ed00d31a1a4bb990e685 = L.marker(
+                [40.72104759999999, -73.98772830000001],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_9cdb78a278aa350532a618d5b82a0147 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aec86f02fbdd013b7257b62a12afc8fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2cc6119261fd24377d094441aec57f6b = $(`<div id="html_2cc6119261fd24377d094441aec57f6b" style="width: 100.0%; height: 100.0%;">         <b>Pianos</b><br>         Address: 158 Ludlow Street, New York<br>         Types: night_club, bar, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_aec86f02fbdd013b7257b62a12afc8fb.setContent(html_2cc6119261fd24377d094441aec57f6b);
+            
+        
+
+        marker_0c96a42b8ce1ed00d31a1a4bb990e685.bindPopup(popup_aec86f02fbdd013b7257b62a12afc8fb)
+        ;
+
+        
+    
+    
+                marker_0c96a42b8ce1ed00d31a1a4bb990e685.setIcon(icon_9cdb78a278aa350532a618d5b82a0147);
+            
+    
+            var marker_a0d5e168548f05bc4ff2fdf6af8a9cb6 = L.marker(
+                [40.7221457, -74.0046268],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_8f6a3bcc44f44ef24ef1e6d51d31661a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0641ac1e99853ec54369ae522d3ee9cb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8e8651bd766afc3cb4fc3455177dee85 = $(`<div id="html_8e8651bd766afc3cb4fc3455177dee85" style="width: 100.0%; height: 100.0%;">         <b>Gilligan's</b><br>         Address: 310 West Broadway, New York<br>         Types: bar, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_0641ac1e99853ec54369ae522d3ee9cb.setContent(html_8e8651bd766afc3cb4fc3455177dee85);
+            
+        
+
+        marker_a0d5e168548f05bc4ff2fdf6af8a9cb6.bindPopup(popup_0641ac1e99853ec54369ae522d3ee9cb)
+        ;
+
+        
+    
+    
+                marker_a0d5e168548f05bc4ff2fdf6af8a9cb6.setIcon(icon_8f6a3bcc44f44ef24ef1e6d51d31661a);
+            
+    
+            var marker_0fe23e5a44405bca637d840de49602f7 = L.marker(
+                [40.72653280000001, -74.0021536],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_dd9294bdf39d58bea261484832398ee8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_281ea3876c7b6ab11d7363ff5536ba11 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_32a10dd467e95238361f7c2f3a03ba10 = $(`<div id="html_32a10dd467e95238361f7c2f3a03ba10" style="width: 100.0%; height: 100.0%;">         <b>The Dutch</b><br>         Address: 131 Sullivan Street, New York<br>         Types: bar, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_281ea3876c7b6ab11d7363ff5536ba11.setContent(html_32a10dd467e95238361f7c2f3a03ba10);
+            
+        
+
+        marker_0fe23e5a44405bca637d840de49602f7.bindPopup(popup_281ea3876c7b6ab11d7363ff5536ba11)
+        ;
+
+        
+    
+    
+                marker_0fe23e5a44405bca637d840de49602f7.setIcon(icon_dd9294bdf39d58bea261484832398ee8);
+            
+    
+            var marker_eda5977e410e65bf8968ea8c888ea2da = L.marker(
+                [40.7309083, -74.0006557],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_5412d5d1119ffcc9746490cf1d8c3563 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_910655d8e616abdc63b76a0e5ec3e8e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a9368fb8ac545824ffc32b49a8e0072a = $(`<div id="html_a9368fb8ac545824ffc32b49a8e0072a" style="width: 100.0%; height: 100.0%;">         <b>Blue Note</b><br>         Address: 131 West 3rd Street, New York<br>         Types: night_club, bar, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_910655d8e616abdc63b76a0e5ec3e8e3.setContent(html_a9368fb8ac545824ffc32b49a8e0072a);
+            
+        
+
+        marker_eda5977e410e65bf8968ea8c888ea2da.bindPopup(popup_910655d8e616abdc63b76a0e5ec3e8e3)
+        ;
+
+        
+    
+    
+                marker_eda5977e410e65bf8968ea8c888ea2da.setIcon(icon_5412d5d1119ffcc9746490cf1d8c3563);
+            
+    
+            var marker_8aaa72cfcd8bd1f21dc71ba3a60bc336 = L.marker(
+                [40.7292083, -73.98441500000001],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_6cf9fd61a428208c3c0f589398593f86 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ae7dd6aefa014579edf985d1d574ede = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_03daaee83f5bf634701bfc4c01b2efd5 = $(`<div id="html_03daaee83f5bf634701bfc4c01b2efd5" style="width: 100.0%; height: 100.0%;">         <b>Momofuku Noodle Bar</b><br>         Address: 171 1st Avenue, New York<br>         Types: restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_1ae7dd6aefa014579edf985d1d574ede.setContent(html_03daaee83f5bf634701bfc4c01b2efd5);
+            
+        
+
+        marker_8aaa72cfcd8bd1f21dc71ba3a60bc336.bindPopup(popup_1ae7dd6aefa014579edf985d1d574ede)
+        ;
+
+        
+    
+    
+                marker_8aaa72cfcd8bd1f21dc71ba3a60bc336.setIcon(icon_6cf9fd61a428208c3c0f589398593f86);
+            
+    
+            var marker_7cc193fe925d9590f9c5ae1042864d90 = L.marker(
+                [40.72157809999999, -73.9956856],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_2ae3b470862673b4e80f0e92e8100020 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_981d30ee15b0b2f966a54df005338987 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9ba89beb862dc932873a2ecb1c8468f3 = $(`<div id="html_9ba89beb862dc932873a2ecb1c8468f3" style="width: 100.0%; height: 100.0%;">         <b>Lombardi's Pizza</b><br>         Address: 32 Spring Street, New York<br>         Types: meal_delivery, meal_takeaway, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_981d30ee15b0b2f966a54df005338987.setContent(html_9ba89beb862dc932873a2ecb1c8468f3);
+            
+        
+
+        marker_7cc193fe925d9590f9c5ae1042864d90.bindPopup(popup_981d30ee15b0b2f966a54df005338987)
+        ;
+
+        
+    
+    
+                marker_7cc193fe925d9590f9c5ae1042864d90.setIcon(icon_2ae3b470862673b4e80f0e92e8100020);
+            
+    
+            var marker_daac8e4ad7f8df8f8b6552b884b1b662 = L.marker(
+                [40.72266799999999, -73.99822979999999],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_c86c1af0165fb5b6fb0a7b93faff7451 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c011fa1b64303065334416aae51dbf0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8ff7c81094c83a42bb1a580dad9179cd = $(`<div id="html_8ff7c81094c83a42bb1a580dad9179cd" style="width: 100.0%; height: 100.0%;">         <b>Balthazar</b><br>         Address: 80 Spring Street, New York<br>         Types: bakery, restaurant, store, point_of_interest, food, establishment         </div>`)[0];
+                popup_6c011fa1b64303065334416aae51dbf0.setContent(html_8ff7c81094c83a42bb1a580dad9179cd);
+            
+        
+
+        marker_daac8e4ad7f8df8f8b6552b884b1b662.bindPopup(popup_6c011fa1b64303065334416aae51dbf0)
+        ;
+
+        
+    
+    
+                marker_daac8e4ad7f8df8f8b6552b884b1b662.setIcon(icon_c86c1af0165fb5b6fb0a7b93faff7451);
+            
+    
+            var marker_0a51aaabb0036b935cc10361982d3785 = L.marker(
+                [40.73432269999999, -73.991186],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_a046f60518073a6e096414939d1d9efd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a7a0ace5e3dc7f9aec045c8e2ffe108f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e2fc65f479101183eb304b5fbe7144c = $(`<div id="html_0e2fc65f479101183eb304b5fbe7144c" style="width: 100.0%; height: 100.0%;">         <b>Max Brenner New York</b><br>         Address: 841 Broadway, New York<br>         Types: restaurant, cafe, store, point_of_interest, food, establishment         </div>`)[0];
+                popup_a7a0ace5e3dc7f9aec045c8e2ffe108f.setContent(html_0e2fc65f479101183eb304b5fbe7144c);
+            
+        
+
+        marker_0a51aaabb0036b935cc10361982d3785.bindPopup(popup_a7a0ace5e3dc7f9aec045c8e2ffe108f)
+        ;
+
+        
+    
+    
+                marker_0a51aaabb0036b935cc10361982d3785.setIcon(icon_a046f60518073a6e096414939d1d9efd);
+            
+    
+            var marker_3b7121ec1488a25dd571fbcff0a80fb3 = L.marker(
+                [40.741518, -73.9881734],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_db910cda2b81fef77efaca10d1b620fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_93a43bfc477ce244e13ae83a0ee3cc95 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2e25dc6c10dc958ad161f0eb9970edf1 = $(`<div id="html_2e25dc6c10dc958ad161f0eb9970edf1" style="width: 100.0%; height: 100.0%;">         <b>Shake Shack Madison Square Park</b><br>         Address: Madison Square Park, 23rd Street and, Madison Avenue, New York<br>         Types: meal_takeaway, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_93a43bfc477ce244e13ae83a0ee3cc95.setContent(html_2e25dc6c10dc958ad161f0eb9970edf1);
+            
+        
+
+        marker_3b7121ec1488a25dd571fbcff0a80fb3.bindPopup(popup_93a43bfc477ce244e13ae83a0ee3cc95)
+        ;
+
+        
+    
+    
+                marker_3b7121ec1488a25dd571fbcff0a80fb3.setIcon(icon_db910cda2b81fef77efaca10d1b620fd);
+            
+    
+            var marker_27a16189be638dcb3bd55c05e63f6cb1 = L.marker(
+                [40.7218694, -73.9581],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_e1713a8d3d710e3fd4280a4d298e4518 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9e7efaa987802bb860a56a29cf393afb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_380ac0b3bb681a544a22e7872c6b9967 = $(`<div id="html_380ac0b3bb681a544a22e7872c6b9967" style="width: 100.0%; height: 100.0%;">         <b>Wythe Hotel</b><br>         Address: 80 Wythe Avenue, Brooklyn<br>         Types: bar, lodging, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_9e7efaa987802bb860a56a29cf393afb.setContent(html_380ac0b3bb681a544a22e7872c6b9967);
+            
+        
+
+        marker_27a16189be638dcb3bd55c05e63f6cb1.bindPopup(popup_9e7efaa987802bb860a56a29cf393afb)
+        ;
+
+        
+    
+    
+                marker_27a16189be638dcb3bd55c05e63f6cb1.setIcon(icon_e1713a8d3d710e3fd4280a4d298e4518);
+            
+    
+            var marker_dc0f6eecd096d6d6071e7bc3c299e0d6 = L.marker(
+                [40.74043309999999, -74.0054753],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_b81c62ae6a38fd8f335f4f82df21cee4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cdcb2bd83113ca5c70249770ec17d828 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_917c691348698e2ace5b5150c596c0fb = $(`<div id="html_917c691348698e2ace5b5150c596c0fb" style="width: 100.0%; height: 100.0%;">         <b>Dos Caminos</b><br>         Address: 675 Hudson Street, New York<br>         Types: meal_takeaway, bar, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_cdcb2bd83113ca5c70249770ec17d828.setContent(html_917c691348698e2ace5b5150c596c0fb);
+            
+        
+
+        marker_dc0f6eecd096d6d6071e7bc3c299e0d6.bindPopup(popup_cdcb2bd83113ca5c70249770ec17d828)
+        ;
+
+        
+    
+    
+                marker_dc0f6eecd096d6d6071e7bc3c299e0d6.setIcon(icon_b81c62ae6a38fd8f335f4f82df21cee4);
+            
+    
+            var marker_d9e3889e0e6a3020e8cc8733ecb0db5c = L.marker(
+                [40.73229599999999, -73.9992785],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_cc5ac346dbf1bf3f08d7dc8b7c230a87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5436208b4db8e95965a8eb8c43c13dd9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_953661d8b64b5cd4e73fc6781adef98e = $(`<div id="html_953661d8b64b5cd4e73fc6781adef98e" style="width: 100.0%; height: 100.0%;">         <b>Babbo</b><br>         Address: 110 Waverly Place, New York<br>         Types: restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_5436208b4db8e95965a8eb8c43c13dd9.setContent(html_953661d8b64b5cd4e73fc6781adef98e);
+            
+        
+
+        marker_d9e3889e0e6a3020e8cc8733ecb0db5c.bindPopup(popup_5436208b4db8e95965a8eb8c43c13dd9)
+        ;
+
+        
+    
+    
+                marker_d9e3889e0e6a3020e8cc8733ecb0db5c.setIcon(icon_cc5ac346dbf1bf3f08d7dc8b7c230a87);
+            
+    
+            var marker_92e30438cc3706e5fc7d736aa8a2151c = L.marker(
+                [40.70647830000001, -74.0032751],
+                {
+}
+            ).addTo(marker_cluster_7d3d843bb26619adebb7e65d54b73d7f);
+        
+    
+            var icon_49b9fea883cedfb9f1f42798647a7122 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "utensils",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12e00a7dbea6b5618d4e7975c8d943af = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bbd1a1a95608b93f7eeddaa0755f383c = $(`<div id="html_bbd1a1a95608b93f7eeddaa0755f383c" style="width: 100.0%; height: 100.0%;">         <b>The Seaport</b><br>         Address: 19 Fulton Street, New York<br>         Types: art_gallery, restaurant, point_of_interest, food, establishment         </div>`)[0];
+                popup_12e00a7dbea6b5618d4e7975c8d943af.setContent(html_bbd1a1a95608b93f7eeddaa0755f383c);
+            
+        
+
+        marker_92e30438cc3706e5fc7d736aa8a2151c.bindPopup(popup_12e00a7dbea6b5618d4e7975c8d943af)
+        ;
+
+        
+    
+    
+                marker_92e30438cc3706e5fc7d736aa8a2151c.setIcon(icon_49b9fea883cedfb9f1f42798647a7122);
+            
+    
+            marker_cluster_7d3d843bb26619adebb7e65d54b73d7f.addTo(map_36c53797a8813afa6bd94147dfd78cff);
+        
+</script>
+</html>
